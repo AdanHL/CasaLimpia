@@ -1,0 +1,34 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS quehaceres;
+DROP TABLE IF EXISTS calendar;
+
+CREATE TABLE users(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+
+CREATE TABLE quehaceres(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    quehacer TEXT UNIQUE NOT NULL,
+);
+
+CREATE TABLE encargos(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    encargo TEXT NOT NULL
+);
+
+CREATE TABLE calendar_q(
+    user INTEGER NOT NULL,
+    quehacer INTEGER NOT NULL,
+    hecho TEXT,
+    tiempo TIMESTAMP DATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE calendar_e(
+    user INTEGER,
+    encargo INTEGER NOT NULL,
+    fecha TEXT NOT NULL,
+    hecho TEXT,
+    tiempo TIMESTAMP DATE
+);

@@ -3,4 +3,3 @@ flask-bootstrap
 flask-wtf
 flask-testing
 flask-login
-pyodbc
